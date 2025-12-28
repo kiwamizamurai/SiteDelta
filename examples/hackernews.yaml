@@ -1,0 +1,25 @@
+# Hacker News Monitoring
+# Monitor top stories on Hacker News (static site)
+version: "1"
+
+monitors:
+  # Monitor top story - multiple values from single page
+  - id: hn-top-story
+    name: "HN Top Story"
+    url: "https://news.ycombinator.com/"
+    selectors:
+      - name: title
+        type: css
+        value: ".titleline > a"
+      - name: points
+        type: css
+        value: ".subtext .score"
+        match:
+          type: regex
+          pattern: "([0-9]+) points"
+
+output:
+  csv:
+    path: "./data/hackernews.csv"
+  state:
+    path: "./data/hackernews-state.json"

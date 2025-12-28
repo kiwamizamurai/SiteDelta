@@ -1,0 +1,47 @@
+# SUUMO Real Estate Monitoring Example
+# Monitor rental listings count and prices in Tokyo
+# Demonstrates regex extraction of specific numeric values
+version: "1"
+
+monitors:
+  # Monitor total listing count (market trend)
+  - id: suumo-listing-count
+    name: "SUUMO Tokyo Listing Count"
+    url: "https://suumo.jp/chintai/tokyo/new/"
+    selectors:
+      - name: count
+        type: css
+        value: ".paginate_set-hit"
+        match:
+          type: regex
+          pattern: "([0-9,]+)件"
+    # Extracts: 401,965 (from "401,965件")
+
+  # Monitor first property rent price
+  - id: suumo-first-rent
+    name: "SUUMO First Listed Rent"
+    url: "https://suumo.jp/chintai/tokyo/new/"
+    selectors:
+      - name: rent
+        type: css
+        value: ".cassetteitem_other-emphasis"
+        match:
+          type: regex
+          pattern: "([0-9.]+)万円"
+    # Extracts: 6.2 (from "6.2万円")
+
+  # Monitor first building name (detect new listings)
+  - id: suumo-first-building
+    name: "SUUMO First Building Name"
+    url: "https://suumo.jp/chintai/tokyo/new/"
+    selectors:
+      - name: building
+        type: css
+        value: ".cassetteitem_content-title"
+    # Extracts: "レジデンス久我山" (building name changes when new listings appear)
+
+output:
+  csv:
+    path: "./data/suumo-history.csv"
+  state:
+    path: "./data/suumo-state.json"

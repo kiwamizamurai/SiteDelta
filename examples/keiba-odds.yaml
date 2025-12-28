@@ -1,0 +1,39 @@
+# Horse Racing Odds Monitoring (netkeiba)
+# Monitor real-time odds changes
+# Note: netkeiba uses JavaScript - system auto-detects dynamic mode
+version: "1"
+
+monitors:
+  # Monitor 1st favorite win odds
+  - id: race-favorite-odds
+    name: "1st Favorite Win Odds"
+    url: "https://race.netkeiba.com/odds/index.html?race_id=202506050811"
+    timeout: 30000
+    selectors:
+      - name: odds
+        type: css
+        value: "tr:nth-child(2) td:nth-child(6)"
+        match:
+          type: regex
+          pattern: "([0-9.]+)"
+
+  # Monitor specific horse odds using XPath
+  # Note: waitFor is needed for XPath since auto-wait only works with CSS
+  - id: horse-5-odds
+    name: "Horse #5 Win Odds"
+    url: "https://race.netkeiba.com/odds/index.html?race_id=202506050811"
+    waitFor: "table"
+    timeout: 30000
+    selectors:
+      - name: odds
+        type: xpath
+        value: "//tr[td[3][normalize-space()='5']]/td[6]"
+        match:
+          type: regex
+          pattern: "([0-9.]+)"
+
+output:
+  csv:
+    path: "./data/keiba-odds.csv"
+  state:
+    path: "./data/keiba-state.json"

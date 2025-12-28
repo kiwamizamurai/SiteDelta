@@ -1,0 +1,343 @@
+/* ========================================
+   SiteDelta - Responsive Styles
+   ======================================== */
+
+/* ========================================
+   Tablet (768px - 1024px)
+   ======================================== */
+
+@media (max-width: 1024px) {
+    :root {
+        --section-padding: 4rem 1.5rem;
+    }
+
+    /* Demo */
+    .demo-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 600px;
+    }
+
+    .demo-patrol {
+        order: -1;
+    }
+
+    /* Features */
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Quick Start */
+    .steps {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Use Cases */
+    .usecase-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Comparison */
+    .comparison-table {
+        font-size: 0.9rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* ========================================
+   Mobile (< 768px)
+   ======================================== */
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 3rem 1rem;
+    }
+
+    /* Navigation */
+    .navbar {
+        padding: 0;
+    }
+
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .btn-github span:not(svg) {
+        display: none;
+    }
+
+    .btn-github {
+        padding: 0.5rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 6rem 1rem 3rem;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    /* Section Headers */
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .section-desc {
+        font-size: 1rem;
+    }
+
+    /* Demo Section */
+    .demo-container {
+        padding: 0;
+    }
+
+    .mock-product {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .product-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .product-details {
+        width: 100%;
+    }
+
+    .product-price {
+        margin: 0 auto 0.75rem;
+    }
+
+    .product-stock {
+        justify-content: center;
+    }
+
+    .patrol-config,
+    .patrol-console {
+        padding: 0.75rem;
+    }
+
+    .config-code {
+        font-size: 0.65rem;
+    }
+
+    .console-output {
+        font-size: 0.7rem;
+        max-height: 120px;
+    }
+
+    .demo-controls {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .btn-demo,
+    .btn-demo-secondary,
+    .btn-demo-reset {
+        width: 100%;
+    }
+
+    /* Comparison Table */
+    .comparison-table-wrapper {
+        margin: 0 -1rem;
+        padding: 0 1rem;
+    }
+
+    .comparison-table {
+        font-size: 0.8rem;
+        min-width: 500px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.6rem 0.75rem;
+    }
+
+    /* Features */
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    /* Quick Start */
+    .code-block {
+        font-size: 0.7rem;
+        padding: 1rem;
+    }
+
+    .quickstart-cta {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .quickstart-cta .btn-primary,
+    .quickstart-cta .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Use Cases */
+    .usecase-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .usecase-card {
+        padding: 1.25rem 1rem;
+    }
+
+    .usecase-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .usecase-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .usecase-card p {
+        font-size: 0.75rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 3rem 1rem;
+    }
+
+    .footer-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-links {
+        gap: 1.5rem;
+    }
+
+    .btn-large {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ========================================
+   Small Mobile (< 480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .browser-url {
+        display: none;
+    }
+
+    .browser-header {
+        justify-content: center;
+    }
+
+    .product-title {
+        font-size: 1.1rem;
+    }
+
+    .price-value {
+        font-size: 1.75rem;
+    }
+
+    .price-currency {
+        font-size: 1.1rem;
+    }
+
+    .usecase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-table {
+        min-width: 450px;
+    }
+}
+
+/* ========================================
+   Large Desktop (> 1400px)
+   ======================================== */
+
+@media (min-width: 1400px) {
+    :root {
+        --container-max: 1300px;
+    }
+
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+
+    .demo-container {
+        max-width: 1200px;
+    }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+    .navbar,
+    .demo-controls,
+    .btn-github,
+    .hero-cta,
+    .quickstart-cta,
+    .footer-cta {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+}

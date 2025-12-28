@@ -1,0 +1,640 @@
+/* ========================================
+   SiteDelta - Demo Section Styles (Notion-inspired)
+   ======================================== */
+
+/* Demo Section */
+.demo-section {
+    background: var(--color-bg);
+    padding-bottom: 4rem;
+}
+
+/* Demo Container Layout */
+.demo-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    align-items: stretch;
+}
+
+/* ========================================
+   Mock Browser Window
+   ======================================== */
+
+.demo-website {
+    position: relative;
+}
+
+.mock-browser {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.browser-header {
+    background: var(--color-bg-secondary);
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.browser-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.browser-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.browser-dot.red { background: #ff5f57; }
+.browser-dot.yellow { background: #febc2e; }
+.browser-dot.green { background: #28c840; }
+
+.browser-url {
+    flex: 1;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-sans);
+    border: 1px solid var(--color-border);
+}
+
+.browser-content {
+    padding: 1.5rem;
+    background: #fff;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Mock Product */
+.mock-product {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.product-image {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.product-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #fff;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.625rem;
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 0.8rem;
+}
+
+.review-count {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.product-price {
+    display: inline-flex;
+    align-items: baseline;
+    padding: 6px 12px;
+    background: #fef3f3;
+    border-radius: 6px;
+    margin-bottom: 0.625rem;
+    transition: all 0.3s ease;
+}
+
+.price-currency {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #eb5757;
+}
+
+.price-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #eb5757;
+}
+
+.product-stock {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--color-success);
+    margin-bottom: 0.875rem;
+}
+
+.stock-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--color-success);
+    border-radius: 50%;
+}
+
+.mock-btn {
+    padding: 8px 18px;
+    background: var(--color-text);
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #fff;
+    cursor: default;
+}
+
+/* ========================================
+   SiteDelta Panel
+   ======================================== */
+
+.demo-patrol {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.patrol-header {
+    background: var(--color-bg-secondary);
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.patrol-logo {
+    color: var(--color-highlight);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.patrol-status {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 10px;
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-muted);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.patrol-status.status-running {
+    background: var(--color-warning-bg);
+    color: var(--color-warning);
+    animation: statusPulse 1.5s ease infinite;
+}
+
+.patrol-status.status-complete {
+    background: var(--color-success-bg);
+    color: var(--color-success);
+}
+
+@keyframes statusPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Config Display */
+.patrol-config {
+    padding: 0.875rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.config-label {
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.config-code {
+    margin: 0;
+    padding: 0.625rem;
+    background: #282c34;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    line-height: 1.6;
+    color: #abb2bf;
+    overflow-x: auto;
+}
+
+.config-code .hl-selector {
+    color: #98c379;
+    background: rgba(152, 195, 121, 0.15);
+    padding: 0 3px;
+    border-radius: 2px;
+}
+
+/* Console Output */
+.patrol-console {
+    padding: 0.875rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+}
+
+.console-label {
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.console-output {
+    flex: 1;
+    background: #282c34;
+    border-radius: 6px;
+    padding: 0.625rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    line-height: 1.7;
+    overflow-y: auto;
+    max-height: 140px;
+}
+
+.console-placeholder {
+    color: #5c6370;
+    font-style: italic;
+}
+
+.console-line {
+    color: #abb2bf;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.console-success {
+    color: #98c379;
+}
+
+.console-warning {
+    color: #e5c07b;
+}
+
+.console-error {
+    color: #e06c75;
+}
+
+.console-dim {
+    color: #5c6370;
+}
+
+/* Result Card */
+.patrol-result {
+    margin: 0 0.875rem 0.875rem;
+    background: var(--color-success-bg);
+    border: 1px solid var(--color-success);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.result-header {
+    background: var(--color-success);
+    color: #fff;
+    padding: 6px 12px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.result-icon {
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    color: var(--color-success);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.7rem;
+}
+
+.result-body {
+    padding: 10px 12px;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.result-label {
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+}
+
+.result-value {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.result-old {
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+}
+
+.result-new {
+    color: var(--color-success);
+    font-weight: 600;
+}
+
+.result-diff {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid var(--color-border);
+}
+
+.diff-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    background: var(--color-success-bg);
+    color: var(--color-success);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   Demo Animations
+   ======================================== */
+
+/* Price Change Animation */
+.product-price.price-changing {
+    animation: priceFlash 0.15s ease infinite;
+}
+
+.product-price.price-changed {
+    background: var(--color-success-bg);
+}
+
+.product-price.price-changed .price-currency,
+.product-price.price-changed .price-value {
+    color: var(--color-success);
+}
+
+@keyframes priceFlash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Selector Highlight */
+.selector-highlight {
+    animation: selectorPulse 1s ease;
+    box-shadow: 0 0 0 2px var(--color-highlight), 0 0 12px rgba(255, 107, 53, 0.3) !important;
+    position: relative;
+}
+
+@keyframes selectorPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.5); }
+    70% { box-shadow: 0 0 0 8px rgba(255, 107, 53, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
+}
+
+/* Tour Highlight - CSS selector label */
+.tour-highlight {
+    position: relative;
+}
+
+.tour-highlight::after {
+    content: '.product-price';
+    position: absolute;
+    top: -24px;
+    left: 0;
+    background: var(--color-text);
+    color: #fff;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* Result Appear Animation */
+.result-appear {
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   Demo Controls
+   ======================================== */
+
+.demo-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.btn-demo {
+    background: var(--color-text);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-sans);
+}
+
+.btn-demo:hover {
+    background: #000;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-demo:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-demo.pulse-animation {
+    animation: buttonPulse 2s ease infinite;
+}
+
+@keyframes buttonPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(55, 53, 47, 0.3); }
+    50% { box-shadow: 0 0 0 10px rgba(55, 53, 47, 0); }
+}
+
+.btn-demo-secondary {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border-dark);
+    padding: 9px 22px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-sans);
+}
+
+.btn-demo-secondary:hover {
+    background: var(--color-bg-secondary);
+    border-color: var(--color-text-muted);
+}
+
+.btn-demo-reset {
+    background: transparent;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-sans);
+}
+
+.btn-demo-reset:hover {
+    color: var(--color-text);
+    border-color: var(--color-border-dark);
+}
+
+/* ========================================
+   Driver.js Custom Styles (Notion-inspired)
+   ======================================== */
+
+.driver-popover {
+    background: #fff !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: 8px !important;
+    color: var(--color-text) !important;
+    max-width: 320px !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.driver-popover-title {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: var(--color-text) !important;
+}
+
+.driver-popover-description {
+    color: var(--color-text-secondary) !important;
+    line-height: 1.6 !important;
+    font-size: 0.875rem !important;
+}
+
+.driver-popover-navigation-btns button {
+    background: var(--color-text) !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 6px 14px !important;
+    border-radius: 4px !important;
+    font-weight: 500 !important;
+    font-size: 0.8rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.driver-popover-navigation-btns button:hover {
+    background: #000 !important;
+}
+
+.driver-popover-close-btn {
+    color: var(--color-text-muted) !important;
+}
+
+.driver-popover-close-btn:hover {
+    color: var(--color-text) !important;
+}
+
+.driver-popover-progress-text {
+    color: var(--color-text-muted) !important;
+    font-size: 0.7rem !important;
+}
+
+.driver-popover-prev-btn {
+    background: transparent !important;
+    color: var(--color-text-secondary) !important;
+    border: 1px solid var(--color-border) !important;
+}
+
+.driver-popover-prev-btn:hover {
+    color: var(--color-text) !important;
+    border-color: var(--color-border-dark) !important;
+    background: var(--color-bg-secondary) !important;
+}
+
+/* ========================================
+   Accessibility: Reduced Motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

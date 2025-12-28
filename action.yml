@@ -1,0 +1,30 @@
+name: 'SiteDelta'
+description: 'Monitor websites for changes with GitHub Actions'
+author: 'kiwamizamurai'
+
+branding:
+  icon: 'eye'
+  color: 'orange'
+
+inputs:
+  config:
+    description: 'Config file path(s), comma-separated for multiple'
+    required: true
+
+outputs:
+  changed:
+    description: 'Any changes detected (true/false)'
+  changes:
+    description: 'All changes (JSON array)'
+  results:
+    description: 'Per-config results: {"configName": {changed, changes, errors}}'
+  error_count:
+    description: 'Total error count'
+  errors:
+    description: 'All errors (JSON array)'
+
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/kiwamizamurai/sitedelta:v1'
+  args:
+    - ${{ inputs.config }}

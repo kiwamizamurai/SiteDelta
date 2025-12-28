@@ -1,0 +1,37 @@
+# Tech Blog Monitoring Example (Zenn)
+# Monitor trending tech articles and updates on Zenn.dev
+version: "1"
+
+monitors:
+  # Monitor trending articles on Zenn homepage
+  - id: zenn-trending
+    name: "Zenn Trending Article"
+    url: "https://zenn.dev/"
+    selectors:
+      - name: title
+        type: css
+        value: "article:first-child h2"
+
+  # Monitor tech trend (TypeScript topic)
+  - id: zenn-typescript
+    name: "Zenn TypeScript Articles"
+    url: "https://zenn.dev/topics/typescript"
+    selectors:
+      - name: title
+        type: css
+        value: "article:first-child h2"
+
+  # Monitor Claude/AI related articles
+  - id: zenn-ai-articles
+    name: "Zenn AI Articles"
+    url: "https://zenn.dev/topics/claude"
+    selectors:
+      - name: title
+        type: css
+        value: "article:first-child h2"
+
+output:
+  csv:
+    path: "./data/zenn-history.csv"
+  state:
+    path: "./data/zenn-state.json"

@@ -1,0 +1,50 @@
+# Mercari Flea Market Price Monitoring Example
+# Monitor specific product prices on Mercari
+# Note: Mercari is a React SPA - auto-fallback to dynamic mode will be used
+version: "1"
+
+monitors:
+  # Monitor Nintendo Switch listings (minimum price indicator)
+  - id: mercari-switch
+    name: "Mercari Nintendo Switch Price"
+    url: "https://jp.mercari.com/search?keyword=nintendo%20switch&status=on_sale&sort=price_asc"
+    timeout: 30000
+    selectors:
+      - name: price
+        type: css
+        value: "main ul li:first-child a"
+        match:
+          type: regex
+          pattern: "([0-9,]+)円"
+
+  # Monitor specific brand items (example: Apple AirPods)
+  - id: mercari-airpods
+    name: "Mercari AirPods Price"
+    url: "https://jp.mercari.com/search?keyword=airpods&status=on_sale&sort=price_asc"
+    timeout: 30000
+    selectors:
+      - name: price
+        type: css
+        value: "main ul li:first-child a"
+        match:
+          type: regex
+          pattern: "([0-9,]+)円"
+
+  # Monitor PS5 listings for resale tracking
+  - id: mercari-ps5
+    name: "Mercari PS5 Lowest Price"
+    url: "https://jp.mercari.com/search?keyword=ps5%20%E6%9C%AC%E4%BD%93&status=on_sale&sort=price_asc"
+    timeout: 30000
+    selectors:
+      - name: price
+        type: css
+        value: "main ul li:first-child a"
+        match:
+          type: regex
+          pattern: "([0-9,]+)円"
+
+output:
+  csv:
+    path: "./data/mercari-history.csv"
+  state:
+    path: "./data/mercari-state.json"

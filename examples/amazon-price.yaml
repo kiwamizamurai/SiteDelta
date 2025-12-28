@@ -1,0 +1,23 @@
+# Amazon Price Monitoring Example
+# Replace XXXXXXXXXX with actual Amazon product ID (ASIN)
+# Note: Amazon uses JavaScript - system auto-detects and uses dynamic mode
+version: "1"
+
+monitors:
+  - id: amazon-product
+    name: "Amazon Product Price"
+    url: "https://www.amazon.co.jp/dp/XXXXXXXXXX"  # Replace with real ASIN
+    timeout: 60000
+    selectors:
+      - name: price
+        type: css
+        value: ".a-price-whole"
+        match:
+          type: regex
+          pattern: "([0-9,]+)"
+
+output:
+  csv:
+    path: "./data/amazon-test.csv"
+  state:
+    path: "./data/amazon-state.json"

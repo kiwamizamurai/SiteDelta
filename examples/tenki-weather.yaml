@@ -1,0 +1,23 @@
+# tenki.jp Weather Monitoring Example
+# Monitor today's high temperature for Kyoto
+version: "1"
+
+monitors:
+  # Monitor Kyoto today's high temperature
+  - id: kyoto-high-temp
+    name: "Kyoto Today High Temperature"
+    url: "https://tenki.jp/forecast/6/29/6110/26100/"
+    selectors:
+      - name: highTemp
+        type: css
+        value: ".today-weather dd"
+        match:
+          type: regex
+          pattern: "([0-9]+)"
+    # Extracts: 10 (from "10 ℃")
+
+output:
+  csv:
+    path: "./data/tenki-history.csv"
+  state:
+    path: "./data/tenki-state.json"
