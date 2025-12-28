@@ -2,9 +2,7 @@
 
 [![GitHub Release](https://img.shields.io/github/v/release/kiwamizamurai/sitedelta?style=flat-square)](https://github.com/kiwamizamurai/sitedelta/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg?style=flat-square)](https://nodejs.org/)
 [![GitHub Stars](https://img.shields.io/github/stars/kiwamizamurai/sitedelta?style=flat-square)](https://github.com/kiwamizamurai/sitedelta/stargazers)
-[![GitHub Issues](https://img.shields.io/github/issues/kiwamizamurai/sitedelta?style=flat-square)](https://github.com/kiwamizamurai/sitedelta/issues)
 
 **A lightweight [changedetection.io](https://github.com/dgtlmoon/changedetection.io) alternative for GitHub Actions.**
 
