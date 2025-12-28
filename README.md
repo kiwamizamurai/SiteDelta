@@ -17,7 +17,6 @@ No server required. No hosting costs. Just a YAML config and GitHub Actions free
 - [Quick Start](#quick-start)
 - [How to Find Selectors](#how-to-find-selectors)
 - [Configuration Reference](#configuration-reference)
-- [Contributing](#contributing)
 - [Star History](#star-history)
 
 ## Comparison
@@ -225,14 +224,6 @@ SiteDelta provides GitHub Actions outputs for integration with other actions:
 | `results` | Per-config results: `{"configName": {changed, changes, errors}}` |
 | `error_count` | Total number of errors |
 | `errors` | JSON array of error details |
-
-## Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests.
-
-<a href="https://github.com/kiwamizamurai/sitedelta/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=kiwamizamurai/sitedelta" />
-</a>
 
 ## Star History
 
